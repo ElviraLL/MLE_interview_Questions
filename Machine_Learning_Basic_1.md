@@ -155,25 +155,25 @@
         - $MRR = \frac{1}{m}\sum_{i=1}^m \frac{1}{\text{rank}_i}$
         - shortcoming: only considers the first relevant item and ignores other relevant items in the list, it does not measure the precision and ranking quality of a ranked list.
     - **Recall@k:** This metric measures **the ratio between the number of relevant items** **in the output list** and **the total number or relevant items available in the entire dataset**. The formula is
-        - $\text{recall@k} = \frac{\text{number of relevant items among the top $k$ items in the output list}}{\text{total relevant items}}$
+        - $\text{recall\@k} = \frac{\text{number of relevant items among the top $k$ items in the output list}}{\text{total relevant items}}$
         - measures how many relevant items the model failed to include in the output list
         - shortcoming: in some systems, the total number of relevant items can be very high. This negatively affects the recall as the denominator is very large. For example, if we want to find a list of image the close to a query image of dog, when the databse may contain millions of dog images. The goal is not to return every dog image but to retreve a handful of the most similar dog images.
     - **Precision@k:** measures the **proportion** of **relevant items among the top k items in the output list**. The formula is:
-        - $\text{precision@k} = \frac{\text{number of revelvant items among the top $k$ items in the output list}}{k}$
+        - $$\text{precision\@k} = \frac{\text{number of relevant items among the top $k$ items in the output list}}{k}$$
         - measures **how precise the output lists are**, but **it doesn’t consider the ranking quality**.
     - **Average Precision (AP):** computes average precision@k for each k. AP is high if more relevant items are located at the top of the list.
     - **mAP**: first computes the average precision (AP) for each output list, and then averages AP values.
         - mAP is designed for binary relevances; in other words, it works well when each item is either relevant or irrelevant. For continuous relevance scores, nDCG is a better choice.
     - Normalized discounted cumulative gain (nDCG)
         - DCG calculates the cumulative gain of items in a list by summing up the relevance score of each item
-        - $\text{DCG}p = \sum{i=1}^p\frac{rel_i}{\log_2(i+1)}$
+        - $\text{DCG}p = \sum_{i=1}^p\frac{rel_i}{\log_2(i+1)}$
         - **nDCG divides the DCG by the DCG of an ideal ranking. The formula is:**
         - $nDCG_p = \frac{DCG_p}{IDCG_p}$
         - Its primary shortcoming is that **deriving ground truth relevance scores is not always possible**.
 
 
 8. Recommender System Metrics
-    - **Precision@k: proportion of relevent content among the top k recommended items**
+    - **Precision@k: proportion of relevant content among the top k recommended items**
     - MRR: focuses on the rank of the first relevant item in the list, suitable in system where only one relevant item is expected
     - mAP: averave of all recommended items AP, measures the ranking quality of recommended items.  mAP works only when the relevance scores are binary (if the score is ether relevant vs irrelevant, mAP is a better fit)
     - nDCG: relevance score between a user and an item is non-binary ( [relevant vs irrelevant case(mAP)] vs [how relevant case(nDCG)]
