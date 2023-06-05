@@ -82,7 +82,7 @@
 
 3. Ridge Regression
    - Linear Regression with L2 Regularization
-   - $L = \|\hat{y} - y\|_2 + \lambda\|\beta\|_2$
+   - $L = ||\hat{y} - y||_2 + \lambda||\beta||_2$
    - Higher values of lambda result in more aggressive shrinkage of the coefficient estimators.
 
    
