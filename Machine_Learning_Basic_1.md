@@ -67,21 +67,21 @@
 ## Reguarlization
 1. L1 vs L2  **regularization**:, which one is which and difference
     - Add a term of L1 norm of the parameters in the loss function (sum of absolute values)
-    - Add a term of L2 norm of the parameters in the loss function ($\|beta\|_2 = (\sum \beta_i^2)^{1/2}$)
+    - Add a term of L2 norm of the parameters in the loss function ($||\beta||_2 = (\sum \beta_i^2)^{1/2}$)
    
 
 2. Lasso Regression
    - Least Absolute Shrinkage and Selection Operator
    - Introduces an additional penalty term based on the absolute values of the coefficients, L1 norm of the coefficients
    - objective: find the value of the coefficients that minimize the sum of the squared differences between the predicted values and the actual values, while also minimizing the L1 regularization term  
-   $L = \| \hat{y} - y \|_2 + \lambda \| \beta \|_1$,  where  $\hat{y} = f_{\beta}(x)$
+   $L = || \hat{y} - y ||_2 + \lambda || \beta ||_1$,  where  $\hat{y} = f_{\beta}(x)$
    - Lasso regression can shrink the coefficients towards zero. when $\lambda$ is sufficiently large, some coefficients are driven to zero. Useful for feature selection
 
 
 
 3. Ridge Regression
    - Linear Regression with L2 Regularization
-   - $$L = \|\hat{y} - y\|_2 + \lambda\|\beta\|_2$$
+   - $L = \|\hat{y} - y\|_2 + \lambda\|\beta\|_2$
    - Higher values of lambda result in more aggressive shrinkage of the coefficient estimators.
 
    
