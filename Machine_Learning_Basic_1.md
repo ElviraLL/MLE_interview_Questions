@@ -74,7 +74,8 @@
    - Least Absolute Shrinkage and Selection Operator
    - Introduces an additional penalty term based on the absolute values of the coefficients, L1 norm of the coefficients
    - objective: find the value of the coefficients that minimize the sum of the squared differences between the predicted values and the actual values, while also minimizing the L1 regularization term  
-   $L = || \hat{y} - y ||_2 + \lambda || \beta ||_1$,  where  $\hat{y} = f_{\beta}(x)$
+   - $L=|| \hat{y} - y ||_2 + \lambda || \beta ||_1$,    
+   - where  $\hat{y} = f_{\beta}(x)$
    - Lasso regression can shrink the coefficients towards zero. when $\lambda$ is sufficiently large, some coefficients are driven to zero. Useful for feature selection
 
 
