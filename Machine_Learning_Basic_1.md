@@ -5,7 +5,7 @@
      - training and validation error both high
      - more complex model, adding more features
    - Overfitting: machine learning model becomes too complex and starts to memorize the trianing data instead of learning generalizable patterns. 
-     - training error significantly lower than the validation error/model performes poorly on new data
+     - training error significantly lower than the validation error/model perform poorly on new data
      - reducing the complexity of the model
      - regularizing the model (l1, l2 regularization, dropout, cross-validation to choose best model)
      - collecting more training data
@@ -67,14 +67,15 @@
 ## Reguarlization
 1. L1 vs L2  **regularization**:, which one is which and difference
     - Add a term of L1 norm of the parameters in the loss function (sum of absolute values)
-    - Add a term of L2 norm of the parameters in the loss function ($$\|\beta\|_2 = (\sum \beta_i^2)^{1/2}$$)
+    - Add a term of L2 norm of the parameters in the loss function ($\|beta\|_2 = (\sum \beta_i^2)^{1/2}$)
    
 
 2. Lasso Regression
    - Least Absolute Shrinkage and Selection Operator
    - Introduces an additional penalty term based on the absolute values of the coefficients, L1 norm of the coefficients
-   - objective: find the value of the coefficients that minimize the sum of the squared differences between the predicted values and the actual values, while also minimizing the L1 regularization term  $$L = \|\hat{y} - y\|_2 + \lambda \|\beta\|_1$$,  where  $$\hat{y} = f_\beta(x)$$
-   - Lasso regression can shrink the coefficients towards zero. when $$\lambda$$ is sufficiently large, some coefficients are driven to zero. Useful for feature selection
+   - objective: find the value of the coefficients that minimize the sum of the squared differences between the predicted values and the actual values, while also minimizing the L1 regularization term  
+   $L = \| \hat{y} - y \|_2 + \lambda \| \beta \|_1$,  where  $\hat{y} = f_{\beta}(x)$
+   - Lasso regression can shrink the coefficients towards zero. when $\lambda$ is sufficiently large, some coefficients are driven to zero. Useful for feature selection
 
 
 
@@ -85,7 +86,7 @@
 
    
 4. 为什么L1比L2稀疏
-   -  L1 norm has corners at zero, while L2 norm is smooth and continuously differentiable
+   - L1 norm has corners at zero, while L2 norm is smooth and continuously differentiable
    - L1 norm penalty creates diamond-shaped constraint regions in the coefficient space, centered around the origin. As a result, the optimization process may drive some coefficient exactly to zero, leading to sparsity (the optimum solution/plain usually hits the vertex of the dimond) Whereas L2 norm is a ball, the optimum solution usually hits a point where the coefficients are non zero.
         
         
@@ -152,10 +153,10 @@
 
 7. Ranking metrics
     - **Mean reciprocal rank (MRR)**: This metric measures the quality of the model by considering the rank of the first relevant item in each output list produced by the model, and then averaging them.
-        - $$ MRR = \frac{1}{m} \sum_{i=1}^m \frac{1}{\text{rank}_i} $$
+        - $$MRR = \frac{1}{m} \sum_{i=1}^m \frac{1}{\text{rank}_i}$$
         - shortcoming: only considers the first relevant item and ignores other relevant items in the list, it does not measure the precision and ranking quality of a ranked list.
     - **Recall@k:** This metric measures **the ratio between the number of relevant items** **in the output list** and **the total number or relevant items available in the entire dataset**. The formula is
-        - $$ \text{recall \@ k} = \frac{\text{number of relevant items among the top $k$ items in the output list}}{\text{total relevant items}}$$
+        - $$\text{recall \@ k} = \frac{\text{number of relevant items among the top $k$ items in the output list}}{\text{total relevant items}}$$
         - measures how many relevant items the model failed to include in the output list
         - shortcoming: in some systems, the total number of relevant items can be very high. This negatively affects the recall as the denominator is very large. For example, if we want to find a list of image the close to a query image of dog, when the databse may contain millions of dog images. The goal is not to return every dog image but to retreve a handful of the most similar dog images.
     - **Precision@k:** measures the **proportion** of **relevant items among the top k items in the output list**. The formula is:
