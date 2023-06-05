@@ -152,10 +152,10 @@
 
 7. Ranking metrics
     - **Mean reciprocal rank (MRR)**: This metric measures the quality of the model by considering the rank of the first relevant item in each output list produced by the model, and then averaging them.
-        - $MRR = \frac{1}{m}\sum_{i=1}^m \frac{1}{\text{rank}_i}$
+        - $MRR = \frac{1}{m} \sum_{i=1}^m \frac{1}{\text{rank}_i}$
         - shortcoming: only considers the first relevant item and ignores other relevant items in the list, it does not measure the precision and ranking quality of a ranked list.
     - **Recall@k:** This metric measures **the ratio between the number of relevant items** **in the output list** and **the total number or relevant items available in the entire dataset**. The formula is
-        - $\text{recall\@k} = \frac{\text{number of relevant items among the top $k$ items in the output list}}{\text{total relevant items}}$
+        - $\text{recall \@ k} = \frac{\text{number of relevant items among the top $k$ items in the output list}}{\text{total relevant items}}$
         - measures how many relevant items the model failed to include in the output list
         - shortcoming: in some systems, the total number of relevant items can be very high. This negatively affects the recall as the denominator is very large. For example, if we want to find a list of image the close to a query image of dog, when the databse may contain millions of dog images. The goal is not to return every dog image but to retreve a handful of the most similar dog images.
     - **Precision@k:** measures the **proportion** of **relevant items among the top k items in the output list**. The formula is:
